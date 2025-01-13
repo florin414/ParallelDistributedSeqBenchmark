@@ -1,0 +1,17 @@
+﻿version: '3.8'
+
+services:
+  seq:
+    image: datalust/seq:latest
+    container_name: seq
+    ports:
+      - "5341:80"
+    environment:
+      - ACCEPT_EULA=Y
+    volumes:
+      - seq-data:/data
+      - seq-logs:/logs
+
+volumes:
+  seq-data:
+  seq-logs:
